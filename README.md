@@ -44,13 +44,12 @@ This is a **Django-based web application** designed to **prevent food wastage** 
    ```bash
    git clone https://github.com/Onkar2104/serveplus.git && cd serveplus
    ```
-   ```
 
 2. **Build and run the Docker containers. This might take a while.**
    ```bash
    docker-compose up --build
    ```
-   ```
+   
 6. **Access the Application**
    Open your browser and go to `http://127.0.0.1:8000/`
 

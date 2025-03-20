@@ -38,12 +38,12 @@ jobs:
         pip install -r requirements.txt
 
         - name: Wait for PostgreSQL
-        run: |
-          until pg_isready -h localhost -p 5432 -U ${{ secrets.DATABASE_USERNAME }}; do
-            echo "Waiting for PostgreSQL..."
-            sleep 2
-          done
-        
+          run: |
+            until PGPASSWORD=${{ secrets.DATABASE_PASSWORD }} pg_isready -h localhost -p 5432 -U ${{ secrets.DATABASE_USERNAME }}; do
+              echo "Waiting for PostgreSQL..."
+              sleep 2
+            done
+
     - name: Run Tests
     env:
       DJANGO_SETTINGS_MODULE: serveplus.settings

@@ -25,9 +25,15 @@ jobs:
            POSTGRES_PASSWORD: ${{ secrets.DATABASE_PASSWORD }}
            DATABASE_HOST: localhost
            DATABASE_PORT: 5432
+         options: >-
+           --health-cmd "pg_isready -U ${{ secrets.DATABASE_USERNAME }} -d serveplus"
+           --health-interval 10s
+           --health-timeout 5s
+           --health-retries 5
 
     steps:
     - uses: actions/checkout@v4
+
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v4
       with:
@@ -38,15 +44,8 @@ jobs:
         python -m pip install --upgrade pip
         pip install --no-cache-dir -r requirements.txt
 
-    - name: Wait for PostgreSQL
-      run: |
-        until PGPASSWORD=${{ secrets.DATABASE_PASSWORD }} pg_isready -h localhost -p 5432 -U ${{ secrets.DATABASE_USERNAME }}; do
-            echo "Waiting for PostgreSQL..."
-            sleep 2
-        done
-
     - name: Run Tests
-    env:
-      DJANGO_SETTINGS_MODULE: serveplus.settings
+      env:
+        DJANGO_SETTINGS_MODULE: serveplus.settings
       run: |
         python manage.py test

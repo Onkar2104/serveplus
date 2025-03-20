@@ -32,17 +32,18 @@ jobs:
       uses: actions/setup-python@v3
       with:
         python-version: ${{ matrix.python-version }}
+        
     - name: Install Dependencies
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
-        - name: Wait for PostgreSQL
-          run: |
-            until PGPASSWORD=${{ secrets.DATABASE_PASSWORD }} pg_isready -h localhost -p 5432 -U ${{ secrets.DATABASE_USERNAME }}; do
-              echo "Waiting for PostgreSQL..."
-              sleep 2
-            done
+    - name: Wait for PostgreSQL
+      run: |
+        until PGPASSWORD=${{ secrets.DATABASE_PASSWORD }} pg_isready -h localhost -p 5432 -U ${{ secrets.DATABASE_USERNAME }}; do
+            echo "Waiting for PostgreSQL..."
+            sleep 2
+        done
 
     - name: Run Tests
     env:

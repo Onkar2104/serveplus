@@ -46,7 +46,7 @@ jobs:
         done
 
     - name: Run Tests
-    env:
-      DJANGO_SETTINGS_MODULE: serveplus.settings
+      env:
+        DJANGO_SETTINGS_MODULE: serveplus.settings
       run: |
         python manage.py test

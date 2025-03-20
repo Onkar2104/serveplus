@@ -58,7 +58,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🤝 Contributing
 Contributions are welcome! Feel free to fork this repository, raise issues, and submit pull requests.
-Check [Cpntributing Guideline.](https://github.com/Onkar2104/serveplus/blob/main/CONTRIBUTING.md)
+Check [Contributing Guideline.](https://github.com/Onkar2104/serveplus/blob/main/CONTRIBUTING.md)
 
 ## 📧 Contact
 For any queries, reach out at **ijareonkar2184@outlook.com** / **nimbalkarjagjeet@gmail.com** or open an issue in this repository.

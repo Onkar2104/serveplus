@@ -28,6 +28,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+    
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v4
       with:
@@ -40,13 +41,15 @@ jobs:
 
     - name: Wait for PostgreSQL
       run: |
-        until PGPASSWORD=${{ secrets.DATABASE_PASSWORD }} pg_isready -h localhost -p 5432 -U ${{ secrets.DATABASE_USERNAME }}; do
-            echo "Waiting for PostgreSQL..."
-            sleep 2
+        export PGPASSWORD=${{ secrets.DATABASE_PASSWORD }}
+        until pg_isready -h localhost -p 5432 -U ${{ secrets.DATABASE_USERNAME }}; do
+          echo "Waiting for PostgreSQL..."
+          sleep 2
         done
+      shell: bash
 
     - name: Run Tests
-    env:
-      DJANGO_SETTINGS_MODULE: serveplus.settings
+      env:
+        DJANGO_SETTINGS_MODULE: serveplus.settings
       run: |
         python manage.py test

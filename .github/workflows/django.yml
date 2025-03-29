@@ -56,4 +56,5 @@ jobs:
       env:
         DJANGO_SETTINGS_MODULE: serveplus.settings
       run: |
+        cd backend 
         python manage.py test

@@ -1,6 +1,6 @@
 # Use the official Python runtime image
-FROM python:3.12 
- 
+FROM python:3.12
+
 # Create the app directory
 RUN mkdir /app
  
@@ -17,13 +17,15 @@ ENV PYTHONUNBUFFERED=1
 RUN pip install --upgrade pip 
  
 # Copy the Django project  and install dependencies
-COPY requirements.txt  /app/
+COPY backend/requirements.txt  /app/
  
 # run this command to install all dependencies 
 RUN pip install --no-cache-dir -r requirements.txt
  
 # Copy the Django project to the container
-COPY . /app/
+COPY backend /app/
+
+RUN ls -lah /app
  
 # Expose the Django port
 EXPOSE 8000

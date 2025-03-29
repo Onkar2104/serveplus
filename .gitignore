@@ -172,3 +172,19 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+
+#frontend 
+# Node modules
+node_modules/
+
+# Build directories
+build/
+dist/
+bundle.js
+bundle.js.map
+
+# NPM debug files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

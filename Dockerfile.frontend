@@ -10,6 +10,9 @@ COPY frontend/package*.json ./
 # Install dependencies
 RUN npm install
 
+# install script for run
+RUN npm install react-scripts  
+
 # Copy the rest of the application files
 COPY frontend/ ./
 

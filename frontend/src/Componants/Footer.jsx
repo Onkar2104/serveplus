@@ -38,8 +38,8 @@ export const Footer = () => {
             </div>
             <div className="footer-bottom">
                 <p>
-                    © 2025 ServePlus. All rights reserved. | 
-                    <Link to="/privacy"> Privacy Policy</Link> | 
+                    © 2025 ServePlus. All rights reserved. |
+                    <Link to="/privacy"> Privacy Policy</Link> |
                     <Link to="/terms"> Terms</Link>
                 </p>
             </div>

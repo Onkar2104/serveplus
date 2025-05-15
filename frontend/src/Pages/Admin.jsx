@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Footer } from "../Componants/Footer";
 import { Navbar } from "../Componants/Navbar";
 import { AiOutlineClose } from "react-icons/ai";
+import { DashCard } from "../Componants/Dash-card";
 
 export const AdminPage = () => {
   return (
@@ -16,19 +17,13 @@ export const AdminPage = () => {
             </div>
             <div className="dashboard">
               <Link >Dashboard</Link>
-              <Link >Pending Donations</Link>
+              <Link  >Pending Donations</Link>
               <Link >Previous Donations</Link>
               <Link >My Profile</Link>
               <button type="button" className="btn">Logout</button>
             </div>
           </div>
-
-          <div className="dashboard-content">
-            <h3>Welcome to Admin Panel</h3>
-            <p>
-              This is where you can manage donors, receivers, donations, and see platform analytics.
-            </p>
-          </div>
+          <DashCard />
         </div>
       </div>
       <Footer />

@@ -26,7 +26,7 @@ export const HeroSection = () => {
     return (
         <>
             <div className="navbar-overlay">
-                <Navbar/>
+                <Navbar />
             </div>
             <div className="hero-container">
                 <div className="hero-image-container">
@@ -43,7 +43,7 @@ export const HeroSection = () => {
                     </div>
                 </div>
             </div>
-            <InfoCard/>
+            <InfoCard />
             <div className="spirit-info">
                 <div className="content">
                     <div className="left-content" ref={leftContentRef}>
@@ -63,6 +63,37 @@ export const HeroSection = () => {
                             Don’t let good food end up in the trash. Share it, serve it, save lives.
                         </p>
                         <a href="donate" className="donate-now-btn">Donate Now</a>
+                    </div>
+                </div>
+            </div>
+            <div className="container">
+                <hr />
+                <div className="work-head text-center mb-4">
+                    <h1>What Our Partners Say</h1>
+                    <div className="partner dash-head">
+                        <video src="/assests/videos/hair-cut.mp4" autoPlay muted loop playsInline />
+                        <p>
+                            “ServePlus has transformed the way we handle food surplus. What used to go to waste now goes into the hands of people   who truly need it. It’s more than just a platform—it’s a movement of compassion and community.”
+                            <br />
+                            <strong>- ServePlus Foundation, Barshi</strong>
+                        </p>
+                    </div>
+                    <hr />
+                </div>
+            </div>
+            <div className="container">
+                <div className="served">
+                    <div className="one">
+                        <label htmlFor="saved">12,500</label>
+                        <p id="saved">Meals Saved</p>
+                    </div>
+                    <div className="one">
+                        <label htmlFor="donors">500</label>
+                        <p id="donors">Active Donors</p>
+                    </div>
+                    <div className="one">
+                        <label htmlFor="NGO">350</label>
+                        <p id="NGO">Partner NGOs</p>
                     </div>
                 </div>
             </div>

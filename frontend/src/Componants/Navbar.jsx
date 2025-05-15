@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom'; 
+import { Link } from 'react-router-dom';
 
 export const Navbar = () => {
     const [isMenuOpen, setMenuOpen] = useState(false);
@@ -9,9 +9,10 @@ export const Navbar = () => {
     };
 
     return (
-        <div className="navbar-box">
+        <div className="navbar-box sticky-top">
             <div className="nav-container container">
                 <div className="logo">
+                    <img src="/assests/images/icno-serve.png" alt="" />
                     <h1>ServePlus</h1>
                 </div>
                 <div className={`nav-links ${isMenuOpen ? 'open' : ''}`}>

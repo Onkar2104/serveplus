@@ -54,17 +54,6 @@ MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
 ]
 
-<<<<<<< HEAD:backend/serveplus/settings.py
-ROOT_URLCONF = 'serveplus.urls'
-
-
-# CORS_ALLOWED_ORIGINS = [
-#     'http://localhost:3000',  # React's development server
-#     # Add other allowed origins
-# ]
-
-=======
->>>>>>> second:backend/backend/settings.py
 CORS_ORIGIN_WHITELIST = [
      'http://localhost:3000'
 ]
